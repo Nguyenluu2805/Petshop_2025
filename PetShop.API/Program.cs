@@ -12,6 +12,7 @@ using AutoMapper;
 using PetShop.Application.Mappers;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using Npgsql.EntityFrameworkCore.PostgreSQL; // cần cài package
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Configure DbContext
 builder.Services.AddDbContext<PetShopDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); // Use PostgreSQL
 
 // Configure AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
@@ -67,8 +68,20 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("CustomerOnly", policy => policy.RequireRole("Customer", "Employee", "Admin"));
 });
 
+// Configure CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactDev", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // domain React dev server
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -106,8 +119,7 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = services.GetRequiredService<PetShopDbContext>();
-        context.Database.Migrate(); // Apply pending migrations
-        // Seed data here if needed (e.g., initial admin user, products, services)
+        context.Database.Migrate();
         new DataSeeder(context).SeedData();
     }
     catch (Exception ex)
@@ -125,6 +137,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowReactDev"); // enable CORS before auth
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -24,6 +24,9 @@ namespace PetShop.Core.Entities
         [MaxLength(50)]
         public string Type { get; set; }
 
+        // Thêm property CreatedAt
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
         // Navigation properties
         public ICollection<Appointment>? Appointments { get; set; }
     }

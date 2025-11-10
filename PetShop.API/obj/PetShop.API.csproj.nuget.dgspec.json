@@ -35,6 +35,12 @@
             "projectReferences": {
               "D:\\Pet_shop_Api\\PetShop.Application\\PetShop.Application.csproj": {
                 "projectPath": "D:\\Pet_shop_Api\\PetShop.Application\\PetShop.Application.csproj"
+              },
+              "D:\\Pet_shop_Api\\PetShop.Core\\PetShop.Core.csproj": {
+                "projectPath": "D:\\Pet_shop_Api\\PetShop.Core\\PetShop.Core.csproj"
+              },
+              "D:\\Pet_shop_Api\\PetShop.Infrastructure\\PetShop.Infrastructure.csproj": {
+                "projectPath": "D:\\Pet_shop_Api\\PetShop.Infrastructure\\PetShop.Infrastructure.csproj"
               }
             }
           }
@@ -63,17 +69,29 @@
               "target": "Package",
               "version": "[9.0.10, )"
             },
-            "Microsoft.AspNetCore.OpenApi": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[10.0.0-rc.2.25502.107, )"
+              "version": "[9.0.10, )"
             },
-            "Microsoft.IdentityModel.Protocols.OpenIdConnect": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.14.0, )"
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.10, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[8.14.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.1, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -576,9 +594,25 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
-            "BCrypt.Net-Core": {
+            "BCrypt.Net-Next": {
               "target": "Package",
-              "version": "[1.6.0, )"
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.14.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.14.0, )"
             }
           },
           "imports": [
@@ -1266,15 +1300,19 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "BCrypt.Net-Next": {
               "target": "Package",
-              "version": "[9.0.10, )"
+              "version": "[4.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [

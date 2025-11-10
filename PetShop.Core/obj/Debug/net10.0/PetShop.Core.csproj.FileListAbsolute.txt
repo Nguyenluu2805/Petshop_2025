@@ -1,0 +1,12 @@
+D:\Pet_shop_Api\PetShop.Core\bin\Debug\net10.0\PetShop.Core.deps.json
+D:\Pet_shop_Api\PetShop.Core\bin\Debug\net10.0\PetShop.Core.dll
+D:\Pet_shop_Api\PetShop.Core\bin\Debug\net10.0\PetShop.Core.pdb
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\PetShop.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\PetShop.Core.AssemblyInfoInputs.cache
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\PetShop.Core.AssemblyInfo.cs
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\PetShop.Core.csproj.CoreCompileInputs.cache
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\PetShop.Core.sourcelink.json
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\PetShop.Core.dll
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\refint\PetShop.Core.dll
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\PetShop.Core.pdb
+D:\Pet_shop_Api\PetShop.Core\obj\Debug\net10.0\ref\PetShop.Core.dll

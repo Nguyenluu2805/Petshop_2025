@@ -12,12 +12,14 @@ namespace PetShop.Infrastructure.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Pet> Pets { get; set; }
-        public DbSet<Service> Servappsettingsices { get; set; }
+        public DbSet<Service> Services { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.HasPostgresExtension("uuid-ossp"); // Add this line for PostgreSQL UUID generation
 
             // Configure composite primary key for OrderItem
             modelBuilder.Entity<OrderItem>()

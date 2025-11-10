@@ -6,4 +6,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <!-- Core không cần thêm PackageReference, chỉ ProjectReference nếu có dependency khác -->
+
 </Project>
